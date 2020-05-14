@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoruHavuzuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SoruHavuzuModelStoreContainer">
+    <EntitySet Name="CR_OgrenciDersler" EntityType="SoruHavuzuModel.Store.CR_OgrenciDersler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CR_OgrenciSinav" EntityType="SoruHavuzuModel.Store.CR_OgrenciSinav" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CR_OgrenciSoru" EntityType="SoruHavuzuModel.Store.CR_OgrenciSoru" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CR_OgretmenDersler" EntityType="SoruHavuzuModel.Store.CR_OgretmenDersler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CR_SoruSinav" EntityType="SoruHavuzuModel.Store.CR_SoruSinav" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dersler" EntityType="SoruHavuzuModel.Store.Dersler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GelenTalepler" EntityType="SoruHavuzuModel.Store.GelenTalepler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Konu" EntityType="SoruHavuzuModel.Store.Konu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ogrenci" EntityType="SoruHavuzuModel.Store.Ogrenci" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ogretmen" EntityType="SoruHavuzuModel.Store.Ogretmen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sinav" EntityType="SoruHavuzuModel.Store.Sinav" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Soru" EntityType="SoruHavuzuModel.Store.Soru" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TalepTuru" EntityType="SoruHavuzuModel.Store.TalepTuru" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CR_OgrenciDers_Ders" Association="SoruHavuzuModel.Store.FK_CR_OgrenciDers_Ders">
+      <End Role="Dersler" EntitySet="Dersler" />
+      <End Role="CR_OgrenciDersler" EntitySet="CR_OgrenciDersler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciDers_Ogrenci" Association="SoruHavuzuModel.Store.FK_CR_OgrenciDers_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="CR_OgrenciDersler" EntitySet="CR_OgrenciDersler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSinav_Ogrenci" Association="SoruHavuzuModel.Store.FK_CR_OgrenciSinav_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="CR_OgrenciSinav" EntitySet="CR_OgrenciSinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSinav_Sinav" Association="SoruHavuzuModel.Store.FK_CR_OgrenciSinav_Sinav">
+      <End Role="Sinav" EntitySet="Sinav" />
+      <End Role="CR_OgrenciSinav" EntitySet="CR_OgrenciSinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSoru_Ogrenci" Association="SoruHavuzuModel.Store.FK_CR_OgrenciSoru_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="CR_OgrenciSoru" EntitySet="CR_OgrenciSoru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSoru_Soru" Association="SoruHavuzuModel.Store.FK_CR_OgrenciSoru_Soru">
+      <End Role="Soru" EntitySet="Soru" />
+      <End Role="CR_OgrenciSoru" EntitySet="CR_OgrenciSoru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgretmenDers_Ders" Association="SoruHavuzuModel.Store.FK_CR_OgretmenDers_Ders">
+      <End Role="Dersler" EntitySet="Dersler" />
+      <End Role="CR_OgretmenDersler" EntitySet="CR_OgretmenDersler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgretmenDers_Ogretmen" Association="SoruHavuzuModel.Store.FK_CR_OgretmenDers_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="CR_OgretmenDersler" EntitySet="CR_OgretmenDersler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_SoruSinav_Sinav" Association="SoruHavuzuModel.Store.FK_CR_SoruSinav_Sinav">
+      <End Role="Sinav" EntitySet="Sinav" />
+      <End Role="CR_SoruSinav" EntitySet="CR_SoruSinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_SoruSinav_Soru" Association="SoruHavuzuModel.Store.FK_CR_SoruSinav_Soru">
+      <End Role="Soru" EntitySet="Soru" />
+      <End Role="CR_SoruSinav" EntitySet="CR_SoruSinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GelenTalepler_Ogrenci" Association="SoruHavuzuModel.Store.FK_GelenTalepler_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="GelenTalepler" EntitySet="GelenTalepler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GelenTalepler_Ogretmen" Association="SoruHavuzuModel.Store.FK_GelenTalepler_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="GelenTalepler" EntitySet="GelenTalepler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GelenTalepler_TalepTuru" Association="SoruHavuzuModel.Store.FK_GelenTalepler_TalepTuru">
+      <End Role="TalepTuru" EntitySet="TalepTuru" />
+      <End Role="GelenTalepler" EntitySet="GelenTalepler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Konu_Ders" Association="SoruHavuzuModel.Store.FK_Konu_Ders">
+      <End Role="Dersler" EntitySet="Dersler" />
+      <End Role="Konu" EntitySet="Konu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinav_Ders" Association="SoruHavuzuModel.Store.FK_Sinav_Ders">
+      <End Role="Dersler" EntitySet="Dersler" />
+      <End Role="Sinav" EntitySet="Sinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinav_GelenTalepler" Association="SoruHavuzuModel.Store.FK_Sinav_GelenTalepler">
+      <End Role="GelenTalepler" EntitySet="GelenTalepler" />
+      <End Role="Sinav" EntitySet="Sinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soru_Konu" Association="SoruHavuzuModel.Store.FK_Soru_Konu">
+      <End Role="Konu" EntitySet="Konu" />
+      <End Role="Soru" EntitySet="Soru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soru_Ogretmen" Association="SoruHavuzuModel.Store.FK_Soru_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="Soru" EntitySet="Soru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soru_Ogretmen1" Association="SoruHavuzuModel.Store.FK_Soru_Ogretmen1">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="Soru" EntitySet="Soru" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CR_OgrenciDersler">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="OgrenciId" Type="int" Nullable="false" />
+    <Property Name="DersId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CR_OgrenciSinav">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+      <PropertyRef Name="SinavId" />
+    </Key>
+    <Property Name="OgrenciId" Type="int" Nullable="false" />
+    <Property Name="SinavId" Type="int" Nullable="false" />
+    <Property Name="Not" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CR_OgrenciSoru">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+      <PropertyRef Name="SoruId" />
+    </Key>
+    <Property Name="OgrenciId" Type="int" Nullable="false" />
+    <Property Name="SoruId" Type="int" Nullable="false" />
+    <Property Name="Cevap" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CR_OgretmenDersler">
+    <Key>
+      <PropertyRef Name="OgretmenId" />
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="OgretmenId" Type="int" Nullable="false" />
+    <Property Name="DersId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CR_SoruSinav">
+    <Key>
+      <PropertyRef Name="SoruId" />
+      <PropertyRef Name="SinavId" />
+    </Key>
+    <Property Name="SoruId" Type="int" Nullable="false" />
+    <Property Name="SinavId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dersler">
+    <Key>
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="DersId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DersAdi" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GelenTalepler">
+    <Key>
+      <PropertyRef Name="GelenTalepId" />
+    </Key>
+    <Property Name="GelenTalepId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TalepTuruId" Type="int" Nullable="false" />
+    <Property Name="OgrenciId" Type="int" Nullable="false" />
+    <Property Name="Aciklama" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgretmenId" Type="int" Nullable="false" />
+    <Property Name="Durum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Konu">
+    <Key>
+      <PropertyRef Name="KonuId" />
+    </Key>
+    <Property Name="KonuId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KonuAdi" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DersId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+    </Key>
+    <Property Name="OgrenciId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OgrenciAdi" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgrenciSoyadi" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgrenciSifre" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgrenciNo" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ogretmen">
+    <Key>
+      <PropertyRef Name="OgretmenId" />
+    </Key>
+    <Property Name="OgretmenId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OgretmenAdi" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgretmenSoyadi" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgretmenEMail" Type="varchar(max)" Nullable="false" />
+    <Property Name="OgretmenSifre" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sinav">
+    <Key>
+      <PropertyRef Name="SinavId" />
+    </Key>
+    <Property Name="SinavId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DersId" Type="int" Nullable="false" />
+    <Property Name="SinavAdi" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ZorlukDerecesi" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SoruSayisi" Type="int" Nullable="false" />
+    <Property Name="SinavSuresi" Type="int" Nullable="false" />
+    <Property Name="SınavBasTarihi" Type="datetime" Nullable="false" />
+    <Property Name="SinavBitisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="TalepId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Soru">
+    <Key>
+      <PropertyRef Name="SoruId" />
+    </Key>
+    <Property Name="SoruId" Type="int" Nullable="false" />
+    <Property Name="SoruMetni" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="A" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="B" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="D" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="E" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KonuId" Type="int" Nullable="false" />
+    <Property Name="OlusturanOgretmenId" Type="int" Nullable="false" />
+    <Property Name="GuncelleyenOgretmenId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TalepTuru">
+    <Key>
+      <PropertyRef Name="TalepTuruId" />
+    </Key>
+    <Property Name="TalepTuruId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TalepTuruAdi" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_CR_OgrenciDers_Ders">
+    <End Role="Dersler" Type="SoruHavuzuModel.Store.Dersler" Multiplicity="1" />
+    <End Role="CR_OgrenciDersler" Type="SoruHavuzuModel.Store.CR_OgrenciDersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciDersler">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciDers_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Store.Ogrenci" Multiplicity="1" />
+    <End Role="CR_OgrenciDersler" Type="SoruHavuzuModel.Store.CR_OgrenciDersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciDersler">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSinav_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Store.Ogrenci" Multiplicity="1" />
+    <End Role="CR_OgrenciSinav" Type="SoruHavuzuModel.Store.CR_OgrenciSinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSinav">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSinav_Sinav">
+    <End Role="Sinav" Type="SoruHavuzuModel.Store.Sinav" Multiplicity="1" />
+    <End Role="CR_OgrenciSinav" Type="SoruHavuzuModel.Store.CR_OgrenciSinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinav">
+        <PropertyRef Name="SinavId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSinav">
+        <PropertyRef Name="SinavId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSoru_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Store.Ogrenci" Multiplicity="1" />
+    <End Role="CR_OgrenciSoru" Type="SoruHavuzuModel.Store.CR_OgrenciSoru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSoru">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSoru_Soru">
+    <End Role="Soru" Type="SoruHavuzuModel.Store.Soru" Multiplicity="1" />
+    <End Role="CR_OgrenciSoru" Type="SoruHavuzuModel.Store.CR_OgrenciSoru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Soru">
+        <PropertyRef Name="SoruId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSoru">
+        <PropertyRef Name="SoruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgretmenDers_Ders">
+    <End Role="Dersler" Type="SoruHavuzuModel.Store.Dersler" Multiplicity="1" />
+    <End Role="CR_OgretmenDersler" Type="SoruHavuzuModel.Store.CR_OgretmenDersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="CR_OgretmenDersler">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgretmenDers_Ogretmen">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Store.Ogretmen" Multiplicity="1" />
+    <End Role="CR_OgretmenDersler" Type="SoruHavuzuModel.Store.CR_OgretmenDersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="CR_OgretmenDersler">
+        <PropertyRef Name="OgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_SoruSinav_Sinav">
+    <End Role="Sinav" Type="SoruHavuzuModel.Store.Sinav" Multiplicity="1" />
+    <End Role="CR_SoruSinav" Type="SoruHavuzuModel.Store.CR_SoruSinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinav">
+        <PropertyRef Name="SinavId" />
+      </Principal>
+      <Dependent Role="CR_SoruSinav">
+        <PropertyRef Name="SinavId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_SoruSinav_Soru">
+    <End Role="Soru" Type="SoruHavuzuModel.Store.Soru" Multiplicity="1" />
+    <End Role="CR_SoruSinav" Type="SoruHavuzuModel.Store.CR_SoruSinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Soru">
+        <PropertyRef Name="SoruId" />
+      </Principal>
+      <Dependent Role="CR_SoruSinav">
+        <PropertyRef Name="SoruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GelenTalepler_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Store.Ogrenci" Multiplicity="1" />
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.Store.GelenTalepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="GelenTalepler">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GelenTalepler_Ogretmen">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Store.Ogretmen" Multiplicity="1" />
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.Store.GelenTalepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="GelenTalepler">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GelenTalepler_TalepTuru">
+    <End Role="TalepTuru" Type="SoruHavuzuModel.Store.TalepTuru" Multiplicity="1" />
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.Store.GelenTalepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TalepTuru">
+        <PropertyRef Name="TalepTuruId" />
+      </Principal>
+      <Dependent Role="GelenTalepler">
+        <PropertyRef Name="TalepTuruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Konu_Ders">
+    <End Role="Dersler" Type="SoruHavuzuModel.Store.Dersler" Multiplicity="1" />
+    <End Role="Konu" Type="SoruHavuzuModel.Store.Konu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="Konu">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinav_Ders">
+    <End Role="Dersler" Type="SoruHavuzuModel.Store.Dersler" Multiplicity="1" />
+    <End Role="Sinav" Type="SoruHavuzuModel.Store.Sinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="Sinav">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinav_GelenTalepler">
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.Store.GelenTalepler" Multiplicity="1" />
+    <End Role="Sinav" Type="SoruHavuzuModel.Store.Sinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GelenTalepler">
+        <PropertyRef Name="GelenTalepId" />
+      </Principal>
+      <Dependent Role="Sinav">
+        <PropertyRef Name="TalepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soru_Konu">
+    <End Role="Konu" Type="SoruHavuzuModel.Store.Konu" Multiplicity="1" />
+    <End Role="Soru" Type="SoruHavuzuModel.Store.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konu">
+        <PropertyRef Name="KonuId" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="KonuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soru_Ogretmen">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Store.Ogretmen" Multiplicity="1" />
+    <End Role="Soru" Type="SoruHavuzuModel.Store.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="GuncelleyenOgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soru_Ogretmen1">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Store.Ogretmen" Multiplicity="1" />
+    <End Role="Soru" Type="SoruHavuzuModel.Store.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="OlusturanOgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

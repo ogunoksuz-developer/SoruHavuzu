@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineSinavModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OnlineSinavEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Derslers" EntityType="OnlineSinavModel.Dersler" />
+    <EntitySet Name="Konulars" EntityType="OnlineSinavModel.Konular" />
+    <EntitySet Name="Kullanicilars" EntityType="OnlineSinavModel.Kullanicilar" />
+    <EntitySet Name="KullaniciTurus" EntityType="OnlineSinavModel.KullaniciTuru" />
+    <EntitySet Name="Sinavlars" EntityType="OnlineSinavModel.Sinavlar" />
+    <EntitySet Name="Sorulars" EntityType="OnlineSinavModel.Sorular" />
+    <EntitySet Name="Taleplers" EntityType="OnlineSinavModel.Talepler" />
+    <AssociationSet Name="FK_Konular_Dersler" Association="OnlineSinavModel.FK_Konular_Dersler">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Konular" EntitySet="Konulars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinavlar_Dersler" Association="OnlineSinavModel.FK_Sinavlar_Dersler">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Sinavlar" EntitySet="Sinavlars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sorular_Konular" Association="OnlineSinavModel.FK_Sorular_Konular">
+      <End Role="Konular" EntitySet="Konulars" />
+      <End Role="Sorular" EntitySet="Sorulars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanicilar_KullaniciTuru" Association="OnlineSinavModel.FK_Kullanicilar_KullaniciTuru">
+      <End Role="KullaniciTuru" EntitySet="KullaniciTurus" />
+      <End Role="Kullanicilar" EntitySet="Kullanicilars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Talepler_Kullanicilar" Association="OnlineSinavModel.FK_Talepler_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilars" />
+      <End Role="Talepler" EntitySet="Taleplers" />
+    </AssociationSet>
+    <AssociationSet Name="CR_KullanicilarDersler" Association="OnlineSinavModel.CR_KullanicilarDersler">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Kullanicilar" EntitySet="Kullanicilars" />
+    </AssociationSet>
+    <AssociationSet Name="CR_KullanicilarSinavlar" Association="OnlineSinavModel.CR_KullanicilarSinavlar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilars" />
+      <End Role="Sinavlar" EntitySet="Sinavlars" />
+    </AssociationSet>
+    <AssociationSet Name="CR_KullanicilarSorular" Association="OnlineSinavModel.CR_KullanicilarSorular">
+      <End Role="Kullanicilar" EntitySet="Kullanicilars" />
+      <End Role="Sorular" EntitySet="Sorulars" />
+    </AssociationSet>
+    <AssociationSet Name="CR_SinavlarSorular" Association="OnlineSinavModel.CR_SinavlarSorular">
+      <End Role="Sinavlar" EntitySet="Sinavlars" />
+      <End Role="Sorular" EntitySet="Sorulars" />
+    </AssociationSet>
+    <AssociationSet Name="CR_SinavlarTalepler" Association="OnlineSinavModel.CR_SinavlarTalepler">
+      <End Role="Sinavlar" EntitySet="Sinavlars" />
+      <End Role="Talepler" EntitySet="Taleplers" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="OnlineSinavModel.sysdiagram" />
+    <EntitySet Name="KullanicilarSinavlars" EntityType="OnlineSinavModel.KullanicilarSinavlar" />
+  </EntityContainer>
+  <EntityType Name="Dersler">
+    <Key>
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="DersId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DersAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Konulars" Relationship="OnlineSinavModel.FK_Konular_Dersler" FromRole="Dersler" ToRole="Konular" />
+    <NavigationProperty Name="Sinavlars" Relationship="OnlineSinavModel.FK_Sinavlar_Dersler" FromRole="Dersler" ToRole="Sinavlar" />
+    <NavigationProperty Name="Kullanicilars" Relationship="OnlineSinavModel.CR_KullanicilarDersler" FromRole="Dersler" ToRole="Kullanicilar" />
+    <Property Type="Boolean" Name="DersDurumu" />
+  </EntityType>
+  <EntityType Name="Konular">
+    <Key>
+      <PropertyRef Name="KonuId" />
+    </Key>
+    <Property Name="KonuId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KonuAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DersId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dersler" Relationship="OnlineSinavModel.FK_Konular_Dersler" FromRole="Konular" ToRole="Dersler" />
+    <NavigationProperty Name="Sorulars" Relationship="OnlineSinavModel.FK_Sorular_Konular" FromRole="Konular" ToRole="Sorular" />
+    <Property Type="Boolean" Name="KonuDurumu" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciTurId" Type="Int32" Nullable="false" />
+    <Property Name="Adi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Soyadi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="KulAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="KullaniciTuru" Relationship="OnlineSinavModel.FK_Kullanicilar_KullaniciTuru" FromRole="Kullanicilar" ToRole="KullaniciTuru" />
+    <NavigationProperty Name="Taleplers" Relationship="OnlineSinavModel.FK_Talepler_Kullanicilar" FromRole="Kullanicilar" ToRole="Talepler" />
+    <NavigationProperty Name="Derslers" Relationship="OnlineSinavModel.CR_KullanicilarDersler" FromRole="Kullanicilar" ToRole="Dersler" />
+    <NavigationProperty Name="Sinavlars" Relationship="OnlineSinavModel.CR_KullanicilarSinavlar" FromRole="Kullanicilar" ToRole="Sinavlar" />
+    <NavigationProperty Name="Sorulars" Relationship="OnlineSinavModel.CR_KullanicilarSorular" FromRole="Kullanicilar" ToRole="Sorular" />
+    <Property Type="Boolean" Name="KullaniciDurumu" />
+  </EntityType>
+  <EntityType Name="KullaniciTuru">
+    <Key>
+      <PropertyRef Name="KullaniciTurId" />
+    </Key>
+    <Property Name="KullaniciTurId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciTuruAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Kullanicilars" Relationship="OnlineSinavModel.FK_Kullanicilar_KullaniciTuru" FromRole="KullaniciTuru" ToRole="Kullanicilar" />
+  </EntityType>
+  <EntityType Name="Sinavlar">
+    <Key>
+      <PropertyRef Name="SinavId" />
+    </Key>
+    <Property Name="SinavId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DersId" Type="Int32" Nullable="false" />
+    <Property Name="SinavAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SoruSayisi" Type="Int32" Nullable="false" />
+    <Property Name="SinavSuresi" Type="Int32" Nullable="false" />
+    <Property Name="SinavBaslamaTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SinavBitisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Dersler" Relationship="OnlineSinavModel.FK_Sinavlar_Dersler" FromRole="Sinavlar" ToRole="Dersler" />
+    <NavigationProperty Name="Kullanicilars" Relationship="OnlineSinavModel.CR_KullanicilarSinavlar" FromRole="Sinavlar" ToRole="Kullanicilar" />
+    <NavigationProperty Name="Sorulars" Relationship="OnlineSinavModel.CR_SinavlarSorular" FromRole="Sinavlar" ToRole="Sorular" />
+    <NavigationProperty Name="Taleplers" Relationship="OnlineSinavModel.CR_SinavlarTalepler" FromRole="Sinavlar" ToRole="Talepler" />
+    <Property Type="Boolean" Name="SinavDurumu" />
+  </EntityType>
+  <EntityType Name="Sorular">
+    <Key>
+      <PropertyRef Name="SoruId" />
+    </Key>
+    <Property Name="SoruId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SoruMetni" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="A" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="B" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="C" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="D" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="E" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DogruCevap" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ZorlukDerecesi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="KonuId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Konular" Relationship="OnlineSinavModel.FK_Sorular_Konular" FromRole="Sorular" ToRole="Konular" />
+    <NavigationProperty Name="Kullanicilars" Relationship="OnlineSinavModel.CR_KullanicilarSorular" FromRole="Sorular" ToRole="Kullanicilar" />
+    <NavigationProperty Name="Sinavlars" Relationship="OnlineSinavModel.CR_SinavlarSorular" FromRole="Sorular" ToRole="Sinavlar" />
+    <Property Type="Boolean" Name="SoruDurumu" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Talepler">
+    <Key>
+      <PropertyRef Name="TalepId" />
+    </Key>
+    <Property Name="TalepId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TalepTuru" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Durum" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Kullanicilar" Relationship="OnlineSinavModel.FK_Talepler_Kullanicilar" FromRole="Talepler" ToRole="Kullanicilar" />
+    <NavigationProperty Name="Sinavlars" Relationship="OnlineSinavModel.CR_SinavlarTalepler" FromRole="Talepler" ToRole="Sinavlar" />
+  </EntityType>
+  <Association Name="FK_Konular_Dersler">
+    <End Role="Dersler" Type="OnlineSinavModel.Dersler" Multiplicity="1" />
+    <End Role="Konular" Type="OnlineSinavModel.Konular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="Konular">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinavlar_Dersler">
+    <End Role="Dersler" Type="OnlineSinavModel.Dersler" Multiplicity="1" />
+    <End Role="Sinavlar" Type="OnlineSinavModel.Sinavlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="Sinavlar">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sorular_Konular">
+    <End Role="Konular" Type="OnlineSinavModel.Konular" Multiplicity="1" />
+    <End Role="Sorular" Type="OnlineSinavModel.Sorular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konular">
+        <PropertyRef Name="KonuId" />
+      </Principal>
+      <Dependent Role="Sorular">
+        <PropertyRef Name="KonuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanicilar_KullaniciTuru">
+    <End Role="KullaniciTuru" Type="OnlineSinavModel.KullaniciTuru" Multiplicity="1" />
+    <End Role="Kullanicilar" Type="OnlineSinavModel.Kullanicilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KullaniciTuru">
+        <PropertyRef Name="KullaniciTurId" />
+      </Principal>
+      <Dependent Role="Kullanicilar">
+        <PropertyRef Name="KullaniciTurId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Talepler_Kullanicilar">
+    <End Role="Kullanicilar" Type="OnlineSinavModel.Kullanicilar" Multiplicity="1" />
+    <End Role="Talepler" Type="OnlineSinavModel.Talepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="Talepler">
+        <PropertyRef Name="KullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CR_KullanicilarDersler">
+    <End Role="Dersler" Type="OnlineSinavModel.Dersler" Multiplicity="*" />
+    <End Role="Kullanicilar" Type="OnlineSinavModel.Kullanicilar" Multiplicity="*" />
+  </Association>
+  <Association Name="CR_KullanicilarSinavlar">
+    <End Role="Kullanicilar" Type="OnlineSinavModel.Kullanicilar" Multiplicity="*" />
+    <End Role="Sinavlar" Type="OnlineSinavModel.Sinavlar" Multiplicity="*" />
+  </Association>
+  <Association Name="CR_KullanicilarSorular">
+    <End Role="Kullanicilar" Type="OnlineSinavModel.Kullanicilar" Multiplicity="*" />
+    <End Role="Sorular" Type="OnlineSinavModel.Sorular" Multiplicity="*" />
+  </Association>
+  <Association Name="CR_SinavlarSorular">
+    <End Role="Sinavlar" Type="OnlineSinavModel.Sinavlar" Multiplicity="*" />
+    <End Role="Sorular" Type="OnlineSinavModel.Sorular" Multiplicity="*" />
+  </Association>
+  <Association Name="CR_SinavlarTalepler">
+    <End Role="Sinavlar" Type="OnlineSinavModel.Sinavlar" Multiplicity="*" />
+    <End Role="Talepler" Type="OnlineSinavModel.Talepler" Multiplicity="*" />
+  </Association>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="KullanicilarSinavlar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Type="Int32" Name="KullaniciId" Nullable="false" />
+    <Property Type="Int32" Name="SinavId" Nullable="false" />
+    <Property Type="Int32" Name="SinavNotu" Nullable="false" />
+    <Property Type="Boolean" Name="SinavaGirdimi" Nullable="false" />
+  </EntityType>
+</Schema>

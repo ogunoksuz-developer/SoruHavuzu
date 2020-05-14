@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a84fba4b12964d168ef00ef89cbb466f" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineSinavModel.Dersler" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSinavModel.Konular" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSinavModel.Kullanicilar" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSinavModel.KullaniciTuru" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSinavModel.Sinavlar" PointX="5.25" PointY="1.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSinavModel.Sorular" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSinavModel.Talepler" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="OnlineSinavModel.FK_Konular_Dersler" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="OnlineSinavModel.FK_Sinavlar_Dersler" />
+        <AssociationConnector Association="OnlineSinavModel.FK_Sorular_Konular" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSinavModel.FK_Kullanicilar_KullaniciTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSinavModel.FK_Talepler_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSinavModel.CR_KullanicilarDersler" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="OnlineSinavModel.CR_KullanicilarSinavlar" />
+        <AssociationConnector Association="OnlineSinavModel.CR_KullanicilarSorular" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="OnlineSinavModel.CR_SinavlarSorular" />
+        <AssociationConnector ManuallyRouted="false" Association="OnlineSinavModel.CR_SinavlarTalepler" />
+        <EntityTypeShape EntityType="OnlineSinavModel.sysdiagram" Width="1.5" PointX="10.586631209862713" PointY="6.6500142396660591" />
+        <EntityTypeShape EntityType="OnlineSinavModel.KullanicilarSinavlar" Width="1.5" PointX="7.716389523687023" PointY="26.9465032047343" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

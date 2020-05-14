@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SoruHavuzuModelStoreContainer" CdmEntityContainer="SoruHavuzuEntities1">
+    <EntitySetMapping Name="CR_OgrenciSinav">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.CR_OgrenciSinav">
+        <MappingFragment StoreEntitySet="CR_OgrenciSinav">
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_OgrenciSoru">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.CR_OgrenciSoru">
+        <MappingFragment StoreEntitySet="CR_OgrenciSoru">
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+          <ScalarProperty Name="Cevap" ColumnName="Cevap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Derslers">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.Dersler">
+        <MappingFragment StoreEntitySet="Dersler">
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+          <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GelenTaleplers">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.GelenTalepler">
+        <MappingFragment StoreEntitySet="GelenTalepler">
+          <ScalarProperty Name="GelenTalepId" ColumnName="GelenTalepId" />
+          <ScalarProperty Name="TalepTuruId" ColumnName="TalepTuruId" />
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Konus">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.Konu">
+        <MappingFragment StoreEntitySet="Konu">
+          <ScalarProperty Name="KonuId" ColumnName="KonuId" />
+          <ScalarProperty Name="KonuAdi" ColumnName="KonuAdi" />
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrencis">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.Ogrenci">
+        <MappingFragment StoreEntitySet="Ogrenci">
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="OgrenciAdi" ColumnName="OgrenciAdi" />
+          <ScalarProperty Name="OgrenciSoyadi" ColumnName="OgrenciSoyadi" />
+          <ScalarProperty Name="OgrenciSifre" ColumnName="OgrenciSifre" />
+          <ScalarProperty Name="OgrenciNo" ColumnName="OgrenciNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogretmen">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.Ogretman">
+        <MappingFragment StoreEntitySet="Ogretmen">
+          <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+          <ScalarProperty Name="OgretmenAdi" ColumnName="OgretmenAdi" />
+          <ScalarProperty Name="OgretmenSoyadi" ColumnName="OgretmenSoyadi" />
+          <ScalarProperty Name="OgretmenEMail" ColumnName="OgretmenEMail" />
+          <ScalarProperty Name="OgretmenSifre" ColumnName="OgretmenSifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sinavs">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.Sinav">
+        <MappingFragment StoreEntitySet="Sinav">
+          <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+          <ScalarProperty Name="SinavAdi" ColumnName="SinavAdi" />
+          <ScalarProperty Name="ZorlukDerecesi" ColumnName="ZorlukDerecesi" />
+          <ScalarProperty Name="SoruSayisi" ColumnName="SoruSayisi" />
+          <ScalarProperty Name="SinavSuresi" ColumnName="SinavSuresi" />
+          <ScalarProperty Name="SınavBasTarihi" ColumnName="SınavBasTarihi" />
+          <ScalarProperty Name="SinavBitisTarihi" ColumnName="SinavBitisTarihi" />
+          <ScalarProperty Name="TalepId" ColumnName="TalepId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sorus">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.Soru">
+        <MappingFragment StoreEntitySet="Soru">
+          <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+          <ScalarProperty Name="SoruMetni" ColumnName="SoruMetni" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="B" ColumnName="B" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="E" ColumnName="E" />
+          <ScalarProperty Name="KonuId" ColumnName="KonuId" />
+          <ScalarProperty Name="OlusturanOgretmenId" ColumnName="OlusturanOgretmenId" />
+          <ScalarProperty Name="GuncelleyenOgretmenId" ColumnName="GuncelleyenOgretmenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TalepTurus">
+      <EntityTypeMapping TypeName="SoruHavuzuModel.TalepTuru">
+        <MappingFragment StoreEntitySet="TalepTuru">
+          <ScalarProperty Name="TalepTuruId" ColumnName="TalepTuruId" />
+          <ScalarProperty Name="TalepTuruAdi" ColumnName="TalepTuruAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CR_OgrenciDersler" TypeName="SoruHavuzuModel.CR_OgrenciDersler" StoreEntitySet="CR_OgrenciDersler">
+      <EndProperty Name="Dersler">
+        <ScalarProperty Name="DersId" ColumnName="DersId" />
+      </EndProperty>
+      <EndProperty Name="Ogrenci">
+        <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CR_OgretmenDersler" TypeName="SoruHavuzuModel.CR_OgretmenDersler" StoreEntitySet="CR_OgretmenDersler">
+      <EndProperty Name="Dersler">
+        <ScalarProperty Name="DersId" ColumnName="DersId" />
+      </EndProperty>
+      <EndProperty Name="Ogretmen">
+        <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CR_SoruSinav" TypeName="SoruHavuzuModel.CR_SoruSinav" StoreEntitySet="CR_SoruSinav">
+      <EndProperty Name="Sinav">
+        <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+      </EndProperty>
+      <EndProperty Name="Soru">
+        <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SoruHavuzuModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SoruHavuzuModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SoruHavuzuModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SoruHavuzuModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SoruHavuzuModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SoruHavuzuModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SoruHavuzuModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SoruHavuzuModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SoruHavuzuModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

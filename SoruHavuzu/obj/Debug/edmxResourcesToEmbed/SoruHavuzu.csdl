@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoruHavuzuModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SoruHavuzuEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CR_OgrenciSinav" EntityType="SoruHavuzuModel.CR_OgrenciSinav" />
+    <EntitySet Name="CR_OgrenciSoru" EntityType="SoruHavuzuModel.CR_OgrenciSoru" />
+    <EntitySet Name="Derslers" EntityType="SoruHavuzuModel.Dersler" />
+    <EntitySet Name="GelenTaleplers" EntityType="SoruHavuzuModel.GelenTalepler" />
+    <EntitySet Name="Konus" EntityType="SoruHavuzuModel.Konu" />
+    <EntitySet Name="Ogrencis" EntityType="SoruHavuzuModel.Ogrenci" />
+    <EntitySet Name="Ogretmen" EntityType="SoruHavuzuModel.Ogretman" />
+    <EntitySet Name="Sinavs" EntityType="SoruHavuzuModel.Sinav" />
+    <EntitySet Name="Sorus" EntityType="SoruHavuzuModel.Soru" />
+    <EntitySet Name="TalepTurus" EntityType="SoruHavuzuModel.TalepTuru" />
+    <AssociationSet Name="FK_CR_OgrenciSinav_Ogrenci" Association="SoruHavuzuModel.FK_CR_OgrenciSinav_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrencis" />
+      <End Role="CR_OgrenciSinav" EntitySet="CR_OgrenciSinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSinav_Sinav" Association="SoruHavuzuModel.FK_CR_OgrenciSinav_Sinav">
+      <End Role="Sinav" EntitySet="Sinavs" />
+      <End Role="CR_OgrenciSinav" EntitySet="CR_OgrenciSinav" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSoru_Ogrenci" Association="SoruHavuzuModel.FK_CR_OgrenciSoru_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrencis" />
+      <End Role="CR_OgrenciSoru" EntitySet="CR_OgrenciSoru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OgrenciSoru_Soru" Association="SoruHavuzuModel.FK_CR_OgrenciSoru_Soru">
+      <End Role="Soru" EntitySet="Sorus" />
+      <End Role="CR_OgrenciSoru" EntitySet="CR_OgrenciSoru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Konu_Ders" Association="SoruHavuzuModel.FK_Konu_Ders">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Konu" EntitySet="Konus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinav_Ders" Association="SoruHavuzuModel.FK_Sinav_Ders">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Sinav" EntitySet="Sinavs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GelenTalepler_Ogrenci" Association="SoruHavuzuModel.FK_GelenTalepler_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrencis" />
+      <End Role="GelenTalepler" EntitySet="GelenTaleplers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GelenTalepler_Ogretmen" Association="SoruHavuzuModel.FK_GelenTalepler_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="GelenTalepler" EntitySet="GelenTaleplers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GelenTalepler_TalepTuru" Association="SoruHavuzuModel.FK_GelenTalepler_TalepTuru">
+      <End Role="TalepTuru" EntitySet="TalepTurus" />
+      <End Role="GelenTalepler" EntitySet="GelenTaleplers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinav_GelenTalepler" Association="SoruHavuzuModel.FK_Sinav_GelenTalepler">
+      <End Role="GelenTalepler" EntitySet="GelenTaleplers" />
+      <End Role="Sinav" EntitySet="Sinavs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soru_Konu" Association="SoruHavuzuModel.FK_Soru_Konu">
+      <End Role="Konu" EntitySet="Konus" />
+      <End Role="Soru" EntitySet="Sorus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soru_Ogretmen" Association="SoruHavuzuModel.FK_Soru_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="Soru" EntitySet="Sorus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soru_Ogretmen1" Association="SoruHavuzuModel.FK_Soru_Ogretmen1">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="Soru" EntitySet="Sorus" />
+    </AssociationSet>
+    <AssociationSet Name="CR_OgrenciDersler" Association="SoruHavuzuModel.CR_OgrenciDersler">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Ogrenci" EntitySet="Ogrencis" />
+    </AssociationSet>
+    <AssociationSet Name="CR_OgretmenDersler" Association="SoruHavuzuModel.CR_OgretmenDersler">
+      <End Role="Dersler" EntitySet="Derslers" />
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+    </AssociationSet>
+    <AssociationSet Name="CR_SoruSinav" Association="SoruHavuzuModel.CR_SoruSinav">
+      <End Role="Sinav" EntitySet="Sinavs" />
+      <End Role="Soru" EntitySet="Sorus" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SoruHavuzuModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SoruHavuzuModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="CR_OgrenciSinav">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+      <PropertyRef Name="SinavId" />
+    </Key>
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" />
+    <Property Name="SinavId" Type="Int32" Nullable="false" />
+    <Property Name="Not" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ogrenci" Relationship="SoruHavuzuModel.FK_CR_OgrenciSinav_Ogrenci" FromRole="CR_OgrenciSinav" ToRole="Ogrenci" />
+    <NavigationProperty Name="Sinav" Relationship="SoruHavuzuModel.FK_CR_OgrenciSinav_Sinav" FromRole="CR_OgrenciSinav" ToRole="Sinav" />
+  </EntityType>
+  <EntityType Name="CR_OgrenciSoru">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+      <PropertyRef Name="SoruId" />
+    </Key>
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" />
+    <Property Name="SoruId" Type="Int32" Nullable="false" />
+    <Property Name="Cevap" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Ogrenci" Relationship="SoruHavuzuModel.FK_CR_OgrenciSoru_Ogrenci" FromRole="CR_OgrenciSoru" ToRole="Ogrenci" />
+    <NavigationProperty Name="Soru" Relationship="SoruHavuzuModel.FK_CR_OgrenciSoru_Soru" FromRole="CR_OgrenciSoru" ToRole="Soru" />
+  </EntityType>
+  <EntityType Name="Dersler">
+    <Key>
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="DersId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DersAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Konus" Relationship="SoruHavuzuModel.FK_Konu_Ders" FromRole="Dersler" ToRole="Konu" />
+    <NavigationProperty Name="Sinavs" Relationship="SoruHavuzuModel.FK_Sinav_Ders" FromRole="Dersler" ToRole="Sinav" />
+    <NavigationProperty Name="Ogrencis" Relationship="SoruHavuzuModel.CR_OgrenciDersler" FromRole="Dersler" ToRole="Ogrenci" />
+    <NavigationProperty Name="Ogretmen" Relationship="SoruHavuzuModel.CR_OgretmenDersler" FromRole="Dersler" ToRole="Ogretmen" />
+  </EntityType>
+  <EntityType Name="GelenTalepler">
+    <Key>
+      <PropertyRef Name="GelenTalepId" />
+    </Key>
+    <Property Name="GelenTalepId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TalepTuruId" Type="Int32" Nullable="false" />
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgretmenId" Type="Int32" Nullable="false" />
+    <Property Name="Durum" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ogrenci" Relationship="SoruHavuzuModel.FK_GelenTalepler_Ogrenci" FromRole="GelenTalepler" ToRole="Ogrenci" />
+    <NavigationProperty Name="Ogretman" Relationship="SoruHavuzuModel.FK_GelenTalepler_Ogretmen" FromRole="GelenTalepler" ToRole="Ogretmen" />
+    <NavigationProperty Name="TalepTuru" Relationship="SoruHavuzuModel.FK_GelenTalepler_TalepTuru" FromRole="GelenTalepler" ToRole="TalepTuru" />
+    <NavigationProperty Name="Sinavs" Relationship="SoruHavuzuModel.FK_Sinav_GelenTalepler" FromRole="GelenTalepler" ToRole="Sinav" />
+  </EntityType>
+  <EntityType Name="Konu">
+    <Key>
+      <PropertyRef Name="KonuId" />
+    </Key>
+    <Property Name="KonuId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KonuAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DersId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dersler" Relationship="SoruHavuzuModel.FK_Konu_Ders" FromRole="Konu" ToRole="Dersler" />
+    <NavigationProperty Name="Sorus" Relationship="SoruHavuzuModel.FK_Soru_Konu" FromRole="Konu" ToRole="Soru" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+    </Key>
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OgrenciAdi" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgrenciSoyadi" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgrenciSifre" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgrenciNo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CR_OgrenciSinav" Relationship="SoruHavuzuModel.FK_CR_OgrenciSinav_Ogrenci" FromRole="Ogrenci" ToRole="CR_OgrenciSinav" />
+    <NavigationProperty Name="CR_OgrenciSoru" Relationship="SoruHavuzuModel.FK_CR_OgrenciSoru_Ogrenci" FromRole="Ogrenci" ToRole="CR_OgrenciSoru" />
+    <NavigationProperty Name="GelenTaleplers" Relationship="SoruHavuzuModel.FK_GelenTalepler_Ogrenci" FromRole="Ogrenci" ToRole="GelenTalepler" />
+    <NavigationProperty Name="Derslers" Relationship="SoruHavuzuModel.CR_OgrenciDersler" FromRole="Ogrenci" ToRole="Dersler" />
+  </EntityType>
+  <EntityType Name="Ogretman">
+    <Key>
+      <PropertyRef Name="OgretmenId" />
+    </Key>
+    <Property Name="OgretmenId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OgretmenAdi" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgretmenSoyadi" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgretmenEMail" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OgretmenSifre" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="GelenTaleplers" Relationship="SoruHavuzuModel.FK_GelenTalepler_Ogretmen" FromRole="Ogretmen" ToRole="GelenTalepler" />
+    <NavigationProperty Name="Sorus" Relationship="SoruHavuzuModel.FK_Soru_Ogretmen" FromRole="Ogretmen" ToRole="Soru" />
+    <NavigationProperty Name="Sorus1" Relationship="SoruHavuzuModel.FK_Soru_Ogretmen1" FromRole="Ogretmen" ToRole="Soru" />
+    <NavigationProperty Name="Derslers" Relationship="SoruHavuzuModel.CR_OgretmenDersler" FromRole="Ogretmen" ToRole="Dersler" />
+  </EntityType>
+  <EntityType Name="Sinav">
+    <Key>
+      <PropertyRef Name="SinavId" />
+    </Key>
+    <Property Name="SinavId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DersId" Type="Int32" Nullable="false" />
+    <Property Name="SinavAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ZorlukDerecesi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SoruSayisi" Type="Int32" Nullable="false" />
+    <Property Name="SinavSuresi" Type="Int32" Nullable="false" />
+    <Property Name="SınavBasTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SinavBitisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TalepId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CR_OgrenciSinav" Relationship="SoruHavuzuModel.FK_CR_OgrenciSinav_Sinav" FromRole="Sinav" ToRole="CR_OgrenciSinav" />
+    <NavigationProperty Name="Dersler" Relationship="SoruHavuzuModel.FK_Sinav_Ders" FromRole="Sinav" ToRole="Dersler" />
+    <NavigationProperty Name="GelenTalepler" Relationship="SoruHavuzuModel.FK_Sinav_GelenTalepler" FromRole="Sinav" ToRole="GelenTalepler" />
+    <NavigationProperty Name="Sorus" Relationship="SoruHavuzuModel.CR_SoruSinav" FromRole="Sinav" ToRole="Soru" />
+  </EntityType>
+  <EntityType Name="Soru">
+    <Key>
+      <PropertyRef Name="SoruId" />
+    </Key>
+    <Property Name="SoruId" Type="Int32" Nullable="false" />
+    <Property Name="SoruMetni" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="A" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="B" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="C" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="D" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="E" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="KonuId" Type="Int32" Nullable="false" />
+    <Property Name="OlusturanOgretmenId" Type="Int32" Nullable="false" />
+    <Property Name="GuncelleyenOgretmenId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CR_OgrenciSoru" Relationship="SoruHavuzuModel.FK_CR_OgrenciSoru_Soru" FromRole="Soru" ToRole="CR_OgrenciSoru" />
+    <NavigationProperty Name="Konu" Relationship="SoruHavuzuModel.FK_Soru_Konu" FromRole="Soru" ToRole="Konu" />
+    <NavigationProperty Name="Ogretman" Relationship="SoruHavuzuModel.FK_Soru_Ogretmen" FromRole="Soru" ToRole="Ogretmen" />
+    <NavigationProperty Name="Ogretman1" Relationship="SoruHavuzuModel.FK_Soru_Ogretmen1" FromRole="Soru" ToRole="Ogretmen" />
+    <NavigationProperty Name="Sinavs" Relationship="SoruHavuzuModel.CR_SoruSinav" FromRole="Soru" ToRole="Sinav" />
+  </EntityType>
+  <EntityType Name="TalepTuru">
+    <Key>
+      <PropertyRef Name="TalepTuruId" />
+    </Key>
+    <Property Name="TalepTuruId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TalepTuruAdi" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="GelenTaleplers" Relationship="SoruHavuzuModel.FK_GelenTalepler_TalepTuru" FromRole="TalepTuru" ToRole="GelenTalepler" />
+  </EntityType>
+  <Association Name="FK_CR_OgrenciSinav_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Ogrenci" Multiplicity="1" />
+    <End Role="CR_OgrenciSinav" Type="SoruHavuzuModel.CR_OgrenciSinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSinav">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSinav_Sinav">
+    <End Role="Sinav" Type="SoruHavuzuModel.Sinav" Multiplicity="1" />
+    <End Role="CR_OgrenciSinav" Type="SoruHavuzuModel.CR_OgrenciSinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinav">
+        <PropertyRef Name="SinavId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSinav">
+        <PropertyRef Name="SinavId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSoru_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Ogrenci" Multiplicity="1" />
+    <End Role="CR_OgrenciSoru" Type="SoruHavuzuModel.CR_OgrenciSoru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSoru">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OgrenciSoru_Soru">
+    <End Role="Soru" Type="SoruHavuzuModel.Soru" Multiplicity="1" />
+    <End Role="CR_OgrenciSoru" Type="SoruHavuzuModel.CR_OgrenciSoru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Soru">
+        <PropertyRef Name="SoruId" />
+      </Principal>
+      <Dependent Role="CR_OgrenciSoru">
+        <PropertyRef Name="SoruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Konu_Ders">
+    <End Role="Dersler" Type="SoruHavuzuModel.Dersler" Multiplicity="1" />
+    <End Role="Konu" Type="SoruHavuzuModel.Konu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="Konu">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinav_Ders">
+    <End Role="Dersler" Type="SoruHavuzuModel.Dersler" Multiplicity="1" />
+    <End Role="Sinav" Type="SoruHavuzuModel.Sinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="Sinav">
+        <PropertyRef Name="DersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GelenTalepler_Ogrenci">
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Ogrenci" Multiplicity="1" />
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.GelenTalepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="GelenTalepler">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GelenTalepler_Ogretmen">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Ogretman" Multiplicity="1" />
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.GelenTalepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="GelenTalepler">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GelenTalepler_TalepTuru">
+    <End Role="TalepTuru" Type="SoruHavuzuModel.TalepTuru" Multiplicity="1" />
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.GelenTalepler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TalepTuru">
+        <PropertyRef Name="TalepTuruId" />
+      </Principal>
+      <Dependent Role="GelenTalepler">
+        <PropertyRef Name="TalepTuruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinav_GelenTalepler">
+    <End Role="GelenTalepler" Type="SoruHavuzuModel.GelenTalepler" Multiplicity="1" />
+    <End Role="Sinav" Type="SoruHavuzuModel.Sinav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GelenTalepler">
+        <PropertyRef Name="GelenTalepId" />
+      </Principal>
+      <Dependent Role="Sinav">
+        <PropertyRef Name="TalepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soru_Konu">
+    <End Role="Konu" Type="SoruHavuzuModel.Konu" Multiplicity="1" />
+    <End Role="Soru" Type="SoruHavuzuModel.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konu">
+        <PropertyRef Name="KonuId" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="KonuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soru_Ogretmen">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Ogretman" Multiplicity="1" />
+    <End Role="Soru" Type="SoruHavuzuModel.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="GuncelleyenOgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Soru_Ogretmen1">
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Ogretman" Multiplicity="1" />
+    <End Role="Soru" Type="SoruHavuzuModel.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="OlusturanOgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CR_OgrenciDersler">
+    <End Role="Dersler" Type="SoruHavuzuModel.Dersler" Multiplicity="*" />
+    <End Role="Ogrenci" Type="SoruHavuzuModel.Ogrenci" Multiplicity="*" />
+  </Association>
+  <Association Name="CR_OgretmenDersler">
+    <End Role="Dersler" Type="SoruHavuzuModel.Dersler" Multiplicity="*" />
+    <End Role="Ogretmen" Type="SoruHavuzuModel.Ogretman" Multiplicity="*" />
+  </Association>
+  <Association Name="CR_SoruSinav">
+    <End Role="Sinav" Type="SoruHavuzuModel.Sinav" Multiplicity="*" />
+    <End Role="Soru" Type="SoruHavuzuModel.Soru" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

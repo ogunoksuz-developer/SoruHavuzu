@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SinavSistemiModelStoreContainer" CdmEntityContainer="SinavSistemiEntities3">
+    <EntitySetMapping Name="CR_KullanicilarDersler">
+      <EntityTypeMapping TypeName="SinavSistemiModel.CR_KullanicilarDersler">
+        <MappingFragment StoreEntitySet="CR_KullanicilarDersler">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_KullanicilarSinav">
+      <EntityTypeMapping TypeName="SinavSistemiModel.CR_KullanicilarSinav">
+        <MappingFragment StoreEntitySet="CR_KullanicilarSinav">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_KullanicilarSorular">
+      <EntityTypeMapping TypeName="SinavSistemiModel.CR_KullanicilarSorular">
+        <MappingFragment StoreEntitySet="CR_KullanicilarSorular">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Derslers">
+      <EntityTypeMapping TypeName="SinavSistemiModel.Dersler">
+        <MappingFragment StoreEntitySet="Dersler">
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+          <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Konulars">
+      <EntityTypeMapping TypeName="SinavSistemiModel.Konular">
+        <MappingFragment StoreEntitySet="Konular">
+          <ScalarProperty Name="KonuId" ColumnName="KonuId" />
+          <ScalarProperty Name="KonuAdi" ColumnName="KonuAdi" />
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilars">
+      <EntityTypeMapping TypeName="SinavSistemiModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="KullaniciTuruId" ColumnName="KullaniciTuruId" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="KullaniciSoyadi" ColumnName="KullaniciSoyadi" />
+          <ScalarProperty Name="KullaniciNo" ColumnName="KullaniciNo" />
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+          <ScalarProperty Name="KullaniciEmail" ColumnName="KullaniciEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciTurus">
+      <EntityTypeMapping TypeName="SinavSistemiModel.KullaniciTuru">
+        <MappingFragment StoreEntitySet="KullaniciTuru">
+          <ScalarProperty Name="KullaniciTuruId" ColumnName="KullaniciTuruId" />
+          <ScalarProperty Name="KullaniciTuruAdi" ColumnName="KullaniciTuruAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sinavlars">
+      <EntityTypeMapping TypeName="SinavSistemiModel.Sinavlar">
+        <MappingFragment StoreEntitySet="Sinavlar">
+          <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+          <ScalarProperty Name="DersId" ColumnName="DersId" />
+          <ScalarProperty Name="SinavAdi" ColumnName="SinavAdi" />
+          <ScalarProperty Name="SoruSayisi" ColumnName="SoruSayisi" />
+          <ScalarProperty Name="SinavSuresi" ColumnName="SinavSuresi" />
+          <ScalarProperty Name="SinavBaslamaTarihi" ColumnName="SinavBaslamaTarihi" />
+          <ScalarProperty Name="SinavBitisTarihi" ColumnName="SinavBitisTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sorulars">
+      <EntityTypeMapping TypeName="SinavSistemiModel.Sorular">
+        <MappingFragment StoreEntitySet="Sorular">
+          <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+          <ScalarProperty Name="SoruMetni" ColumnName="SoruMetni" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="B" ColumnName="B" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="E" ColumnName="E" />
+          <ScalarProperty Name="DogruCevap" ColumnName="DogruCevap" />
+          <ScalarProperty Name="ZorlukDerecesi" ColumnName="ZorlukDerecesi" />
+          <ScalarProperty Name="KonuId" ColumnName="KonuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taleplers">
+      <EntityTypeMapping TypeName="SinavSistemiModel.Talepler">
+        <MappingFragment StoreEntitySet="Talepler">
+          <ScalarProperty Name="TalepId" ColumnName="TalepId" />
+          <ScalarProperty Name="TalepTuruId" ColumnName="TalepTuruId" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TalepTurus">
+      <EntityTypeMapping TypeName="SinavSistemiModel.TalepTuru">
+        <MappingFragment StoreEntitySet="TalepTuru">
+          <ScalarProperty Name="TalepTuruId" ColumnName="TalepTuruId" />
+          <ScalarProperty Name="TalepAdi" ColumnName="TalepAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CR_SinavlarTalepler" TypeName="SinavSistemiModel.CR_SinavlarTalepler" StoreEntitySet="CR_SinavlarTalepler">
+      <EndProperty Name="Sinavlar">
+        <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+      </EndProperty>
+      <EndProperty Name="Talepler">
+        <ScalarProperty Name="TalepId" ColumnName="TalepId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CR_SorularSinav" TypeName="SinavSistemiModel.CR_SorularSinav" StoreEntitySet="CR_SorularSinav">
+      <EndProperty Name="Sinavlar">
+        <ScalarProperty Name="SinavId" ColumnName="SinavId" />
+      </EndProperty>
+      <EndProperty Name="Sorular">
+        <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SinavSistemiModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
